@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+*.log
+build
+dist
+.git
+.gitignore
+README.md
+.env.local
+.env.*.local
+coverage
+.DS_Store
+.env
+Backend/node_modules
+frontend/node_modules
+Backend/.env
+frontend/.env
