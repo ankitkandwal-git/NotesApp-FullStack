@@ -1,16 +1,35 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## NotesApp – Full Stack Notes Application
 
-Currently, two official plugins are available:
+NotesApp is a full stack note-taking app built with React (frontend) and Node.js/Express (backend), using SQLite for storage. The project is fully containerized with Docker and Docker Compose for easy local development and deployment.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### Features
+- User authentication (JWT-based)
+- Create, edit, and delete notes
+- Responsive React frontend (Vite, Tailwind CSS)
+- RESTful API with Express
+- SQLite database (auto-initialized)
+- Secure password hashing
+- Live reload for development
+- Dockerized: run both frontend and backend with a single command
 
-## React Compiler
+### Quick Start
+1. Clone the repo
+2. In the project root, run:
+	```
+	docker-compose up
+	```
+3. Access the app at [http://localhost:5173](http://localhost:5173)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Development
+- Edit frontend or backend code and Docker will auto-reload changes.
+- To stop: `docker-compose down`
+- To rebuild after major changes: `docker-compose up --build`
 
-## Expanding the ESLint configuration
+### Why use this project?
+- Simple, modern full stack architecture
+- No manual environment setup—just Docker
+- Great for learning, prototyping, or as a starter for your own projects
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+**Made with React, Node.js, Express, SQLite, and Docker.**
