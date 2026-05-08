@@ -1,4 +1,31 @@
+
 import '../styles/noteCard.css';
+
+// Map project names to URLs
+const projectLinks = {
+  NotesApp: "https://notesapp-fullstack-qvwo.onrender.com",
+  // Add more projects here if needed
+};
+
+// Function to auto-link project names in text
+function autoLinkProjects(text) {
+  // Add more project names to the regex if needed
+  return text.split(/(NotesApp)/g).map((part, i) =>
+    projectLinks[part] ? (
+      <a
+        key={i}
+        href={projectLinks[part]}
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ color: "#6c63ff", textDecoration: "underline" }}
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
 
 const NoteCard = ({ note, onEdit, onDelete }) => {
   const formatDate = (date) => {
@@ -39,7 +66,7 @@ const NoteCard = ({ note, onEdit, onDelete }) => {
       </div>
 
       <div className="note-content">
-        <p>{truncateText(note.content, 100)}</p>
+        <p>{autoLinkProjects(truncateText(note.content, 100))}</p>
       </div>
 
       <div className="note-footer">
